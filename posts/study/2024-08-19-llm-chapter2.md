@@ -2,7 +2,7 @@
 layout: post
 title: LLM을 이용한 의미 기반 검색
 parent: LLM
-has_children: true
+has_children: false
 nav_order: 2
 ---
 
