@@ -6,7 +6,7 @@ has_children: false
 nav_order: 2
 ---
 
-#  LLM을 이용한 의미 기반 검색
+#  LLM을 이용한 의미 기반 검색(Semantic Search)
 
 ## 2.1 들어가는 글
 
