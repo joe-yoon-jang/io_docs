@@ -187,11 +187,12 @@ for i, embedding in enumerate(embeddings):
 
 ![2.7](../../assets/images/llm-2-7.png)
 
-1. 문서저장
+-. 문서저장
   1. 임베딩을 위한 문서 저장 - 청크
   2. 텍스트 임베딩 생성 - openai 임베딩
   3. 임베딩 디비 저장 - 파인콘
-2. 문서 검색
+  
+-. 문서 검색
   1. api - fastApi
   2. 후보문서 검색 - OpenAi의 임베딩 + 파인콘
   3. 문서 재순위화 - 크로스 인코더
