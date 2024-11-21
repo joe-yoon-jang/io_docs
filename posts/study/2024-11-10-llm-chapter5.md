@@ -274,3 +274,89 @@ doc_emb = model.encode(docs, batch_size=32, show_progress_bar=True)
 - 비슷한 프롬프트의여러 가지 변형과 반복이 필요하다는 것을 이제는 알았다
 - 몇 가지 주요한 모범사례를 따르면 이 프로세스를 더 빠르고 쉽게 만들 수 있고,LLM 출력을 최대한 활용하여, 신
 뢰할 수 있고 일관되며 정확한 결과를 만들 수 있다
+
+
+```py
+
+    def preprocess_text(self, text):
+        # 텍스트 정리
+        text = re.sub(r'\s+', ' ', text.strip())
+        return text
+
+    def classify_text(self, row, entity_key, idx=None, total=None):
+        candidate_labels = [
+            "Yes",
+            "No",
+        ]
+
+        # 진행 상태 출력
+        if idx is not None and total is not None and idx % 100 == 0:
+            print(f"[{idx + 1}/{total}] Processing row {idx + 1} of {total}...")
+            
+        scikit_compat = (
+            f'Does the provided text clearly state the value "{self.preprocess_text(row["entity_value"])}" for '
+            f'the "{self.entity_names[entity_key]}"? Here is the text: {self.preprocess_text(row["value_text"])}'
+        )
+        result = self.classifier(scikit_compat, candidate_labels)
+        predicted_label = result["labels"][0]  # 가장 높은 확률의 레이블
+        confidence_score = result["scores"][0]  # 가장 높은 확률 값
+        if predicted_label == candidate_labels[0] and confidence_score >= 0.7:
+            return 1
+        else:
+            return 0
+
+    def process_rows_in_parallel(self, dataframe, max_workers=4, entity_key=""):
+        """DataFrame 병렬 처리"""
+        results = []
+        total = len(dataframe)
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # 병렬 처리 작업 제출
+            future_to_row = {
+                executor.submit(self.classify_text, row, entity_key, idx, total): idx for idx, row in dataframe.iterrows()
+            }
+
+            # 작업 완료 대기 및 결과 수집
+            for future in as_completed(future_to_row):
+                idx = future_to_row[future]
+                try:
+                    results.append((idx, future.result()))
+                except Exception as e:
+                    print(f"Error processing row {idx}: {e}")
+                    raise(e)
+        
+        # DataFrame에 결과 병합
+        for idx, label in results:
+            dataframe.loc[idx, "true_prob"] = label
+
+        return dataframe
+
+    def execute(self, entity_key):
+        # 시작 시간 기록
+        start_time = time.time()
+
+        # 쿼리 실행 및 DataFrame 변환
+        df = self.get_sql_to_df(self.get_query(entity_key))
+
+        # DataFrame 병렬 처리
+        df = self.process_rows_in_parallel(df, max_workers=32, entity_key=entity_key)
+
+        output_csv_file_path = f"output_{entity_key}.csv"  # 저장할 파일 경로와 이름
+        df.to_csv(output_csv_file_path, index=False, encoding='utf-8-sig') 
+
+        # 5. 결과 출력
+        print("결과:")
+        print(df)
+
+        # 종료 시간 기록
+        end_time = time.time()
+
+        # 총 실행 시간 출력
+        print("총 실행 시간: {:.2f}초".format(end_time - start_time))
+
+    def check_pathology_result(self):
+        logging.debug("디버깅 메시지: 테스트 진행 중...")
+        for entity_key in self.entity_names.keys():
+            print("entity_key: ", entity_key)
+            logging.debug("디버깅 메시지: 테스트 진행 중...")
+            self.execute(entity_key)
+```
