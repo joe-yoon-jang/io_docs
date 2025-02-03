@@ -35,7 +35,7 @@ nav_order: 4
 
 * 파인튜닝 과정
 
-![4.1](../../assets/images/llm-4-1.png)
+![4.1](../../../assets/images/llm-4-1.png)
 
 1. 레이블이 지정된 데이터 수집
   - 작업이나 도메인과 관련된 레이블이 지정된 예시 훈련, 검증, 테스트를 위한 데이터셋 수집
@@ -104,7 +104,7 @@ nav_order: 4
 - 분류 레이블 앞에는 시작 공백이 있다
   - 모델이 새 토큰을 생성해야 한다는 것을 이해한다
 
-![4.2](../../assets/images/llm-4-2.png)
+![4.2](../../../assets/images/llm-4-2.png)
 
 ```py
 
@@ -177,7 +177,7 @@ english_training_df.to_json("imdb-train-sentiment.jsonl", orient='records', line
 - 파인튜닝된 모델의 성능을 측정
   - 정확도, F1 점수, 혼란도와 같은 지표와 벤치마크를 활용
 
-![4.3](../../assets/images/llm-4-3.png)
+![4.3](../../../assets/images/llm-4-3.png)
 
 - 4배의 비용으로 정확도가 1%만 상승한다면? 
   - 산업에서는 모델이 거의 완벽해야 하며 1%의 차이도 중요
@@ -189,7 +189,7 @@ english_training_df.to_json("imdb-train-sentiment.jsonl", orient='records', line
 - 정성적 평가 기술
   - 정량적 지표와 함께 수행할 때 파인튜닝된 모델의 장점과 약점 제공
 
-![4.4](../../assets/images/llm-4-4.png)
+![4.4](../../../assets/images/llm-4-4.png)
 
 ### 4.6.3 파인튜닝된 GPT-3 모델을 애플리케이션에 통합하기
 - 파인튜닝된 GPT-3 모델을 애플리케이션에 통합하는 방법

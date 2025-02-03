@@ -36,13 +36,13 @@ nav_order: 2
 
 - 비대칭적 의미 기반 검색 시스템의 일반적인 흐름
 
-  ![2.1](../../assets/images/llm-2-1.png)
+  ![2.1](../../../assets/images/llm-2-1.png)
   1. 문서 저장
     1. 임베딩을 위한 문서 저장
     2. 의미 정보를 인코딩하기 위한 텍스트 임베딩 생성
     3. 검색용 임베딩 DB 저장
 
-  ![2.2](../../assets/images/llm-2-2.png)
+  ![2.2](../../../assets/images/llm-2-2.png)
 
   2. 문서 검색
     1. 사용자가 항목을 검색하여 전처리되고 정리할 수 있는 쿼리
@@ -60,7 +60,7 @@ nav_order: 2
 
 * 무엇이 텍스트를 유사하게 만드는가
 
-  ![2.3](../../assets/images/llm-2-3.png)
+  ![2.3](../../../assets/images/llm-2-3.png)
 
 - 임베딩 메커니즘은 앞서 설명한대로 유사한 항목이 코사인 유사도가 크다. 
 
@@ -156,12 +156,12 @@ for i, embedding in enumerate(embeddings):
 * 맞춤형 구분 기호 찾기
   - 청킹 방법을 돕기 위해 페이지 분리나 단락 사이에 새로운 줄과 같은 자연 구분기호룰 사용할수있다
 
-![2.4](../../assets/images/llm-2-4.png)
+![2.4](../../../assets/images/llm-2-4.png)
 
 * 클러스터링을 사용하여 의미 기반 문서 생성
   - 의미적으로 유사한 작은 청크를 결합하여 새로운 문서를 생성하는 방법
 
-![2.5](../../assets/images/llm-2-5.png)
+![2.5](../../../assets/images/llm-2-5.png)
 
 * 청크로 나누지 않고 전체 문서 사용
   - 가장 쉬운방식이지만 고려해야할 항목이 많다
@@ -181,11 +181,11 @@ for i, embedding in enumerate(embeddings):
 - 결과를 재순위화(re-ranking) 하는 한가지 방법으로 크로스 인코더(cross-encoder)를 사용
 - 더 정확한 추천을 제공하기 위해 작업 특정 데이터셋에서 사전 훈련된 크로스-인코더 모델을 파인튜닝할 수도 있다
 
-![2.6](../../assets/images/llm-2-6.png)
+![2.6](../../../assets/images/llm-2-6.png)
 
 ## 2.5 통합
 
-![2.7](../../assets/images/llm-2-7.png)
+![2.7](../../../assets/images/llm-2-7.png)
 
 -. 문서저장
   1. 임베딩을 위한 문서 저장 - 청크

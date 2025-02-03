@@ -40,7 +40,7 @@ nav_order: 5
 - BART-MNLI는 NLI를 사용하여 두 텍스트 조각 사이의 관계를 이해할 수 있는 강력한LLM
 - NLI Natural Language Inference (자연어 추론)의 개념은 주어진 전제에 대해서 가설이 함의(entailment)되는지, 모순(contradiction)되는지, 또는 중립(neutral)인지를 판단
 
-![5.1](../../assets/images/llm-5-1.png)
+![5.1](../../../assets/images/llm-5-1.png)
 
 
 - 전제: 인정된 진실 가설: 확신하지 못하는 진술 레이블
@@ -267,7 +267,7 @@ docs = gsm_dataset['train']['question']
 doc_emb = model.encode(docs, batch_size=32, show_progress_bar=True)
 ```
 
-![5.2](../../assets/images/llm-5-2.png)
+![5.2](../../../assets/images/llm-5-2.png)
 
 
 ## 5.8 테스트와 반복적 프롬프트 개발
