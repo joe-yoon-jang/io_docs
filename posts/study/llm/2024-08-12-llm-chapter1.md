@@ -2,7 +2,7 @@
 layout: post
 title: LLM chapter1
 parent: LLM
-has_children: true
+has_children: false
 nav_order: 1
 ---
 
