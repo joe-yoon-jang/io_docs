@@ -1,6 +1,9 @@
 ---
 title: Home
 layout: home
+nav_order: 1
+description: "Study Pages."
+permalink: /
 ---
 
 스터디 정리

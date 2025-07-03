@@ -3,7 +3,7 @@ layout: post
 title: 맞춤형 파인튜닝으로 LLM을 최적화하기
 parent: LLM
 has_children: false
-nav_order: 4
+nav_order: 884
 ---
 
 # 맞춤형 파인튜닝으로 LLM을 최적화하기

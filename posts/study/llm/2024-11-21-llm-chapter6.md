@@ -3,7 +3,7 @@ layout: post
 title: 임베딩과 모델 아키텍처 맞춤화
 parent: LLM
 has_children: false
-nav_order: 6
+nav_order: 886
 ---
 
 # 임베딩과 모델 아키텍처 맞춤화

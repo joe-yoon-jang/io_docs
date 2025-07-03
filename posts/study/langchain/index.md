@@ -1,4 +1,5 @@
 ---
+layout: home
 title: LangChain
 nav_order: 3
 ---
