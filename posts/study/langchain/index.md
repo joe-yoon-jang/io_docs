@@ -2,6 +2,7 @@
 layout: home
 title: LangChain
 nav_order: 3
+has_children: true
 ---
 
 # LangChain

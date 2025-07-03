@@ -1,6 +1,7 @@
 ---
 layout: home
 title: LLM
+has_children: true
 nav_order: 3
 ---
 
