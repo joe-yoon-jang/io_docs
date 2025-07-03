@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 고급 오픈 소스 LLM 파인튜닝
+title: embedding
 parent: LLM
 has_children: false
 nav_order: 889
 ---
-▲
+
 # 코사인 유사도(Cosine Similarity)를 함부로 사용하지 말 것 (p.migdal.pl)[ref.1](https://p.migdal.pl/blog/2025/01/dont-use-cosine-similarity/)
 
 - 데이터 과학자는 모든 것을 AI의 언어 벡터로 변환
