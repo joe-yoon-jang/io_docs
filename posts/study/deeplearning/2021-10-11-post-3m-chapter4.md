@@ -103,7 +103,7 @@ plt.imshow(np.transpose(npimg, (1,2,0)))
 plt.show()
 ```
 
-![0](../../assets/images/22211015.png)
+![0](../../../assets/images/22211015.png)
 
 ### images grid
 
@@ -159,7 +159,7 @@ plt.show()
 ```
 
 
-![1](../../assets/images/2221101502.png)
+![1](../../../assets/images/2221101502.png)
 
 ## 인공 신경망으로 패션 아이템 분류하기(DNN Deep neural network)
 
@@ -337,7 +337,7 @@ plt.imshow(np.transpose(npimg, (1,2,0)))
 plt.show()
 ```
 
-![2](../../assets/images/2221101503.png)
+![2](../../../assets/images/2221101503.png)
 
 ### 드롭아웃
 

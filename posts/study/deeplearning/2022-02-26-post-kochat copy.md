@@ -71,7 +71,7 @@ if __name__ == '__main__':
     - 금융상담봇, 식당예얏봇 등 Goal oriented 챗봇
 - 시리나 빅스비 같은 인공지능 비서, 인공지능 스피커들은 특수 기능과 잡담도 잘해야하므로 2개 도메인 모두 포함되어있다
 
-![3](../../assets/images/about-chatbot.jpg)
+![3](../../../assets/images/about-chatbot.jpg)
 
 ### 챗봇의 구현
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
 - Slot Filling: 미리 기능을 수행할 정보를 담는 슬롯을 먼저 정의한 다음 어떤 슬롯을 선택할지 정하고 슬롯을 채워나가는 방식
     - 인텐트와 엔티티라는 개념이 필요하다
 
-![2](../../assets/images/close-domain-01.jpg)
+![2](../../../assets/images/close-domain-01.jpg)
 
 #### 인텐트(의도) 분류하기: 슬롯 고르기
 
@@ -108,7 +108,7 @@ if __name__ == '__main__':
 - 위 4가지 발화의도 안에서만 말할 것이라는 보장은 없다
 - 입력 단어들의 임베딩인 문장 벡터와 기존 데이터셋에 있는 문장 벡터들의 Cosine 유사도를 비교한다
 - 인접 클래스와의 각도가 임계치 이상이면 Fallback 이고 그렇지 않으면 인접 클래스로 데이터 샘플을 분류
-![0](../../assets/images/fallback.png)
+![0](../../../assets/images/fallback.png)
 
 #### 엔티티(개체명) 인식하기: 슬롯 채우기
 
@@ -118,7 +118,7 @@ if __name__ == '__main__':
   - 슬롯을 채우고 API로 외부로부터 정보를 제공받는다 
   - API로부터 결과가 도착하면, 미리 만들어둔 템플릿 문장에 해당 실행 결과를 삽입하여 대답을 만들고, 사용자에게 response 한다
 
-![1](../../assets/images/response.jpg)
+![1](../../../assets/images/response.jpg)
 
 ## 데이터셋
 

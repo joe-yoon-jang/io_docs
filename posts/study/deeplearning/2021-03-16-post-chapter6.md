@@ -64,15 +64,15 @@ for i in range(10000):
 
 ### SGD의 단점
 
-![sgd1](../../assets/images/220318.png)
+![sgd1](../../../assets/images/220318.png)
 
 - 이 수식은 x축 방향으로 늘인 타원모양으로 기울기가 나타난다
 
-![sgd2](../../assets/images/220319.png)
+![sgd2](../../../assets/images/220319.png)
 
 - 위 수식은 최소값은 0,0 이나 대부분의 위치가 최수값을 가르키지 않는다.
 
-![sgd3](../../assets/images/220320.png)
+![sgd3](../../../assets/images/220320.png)
 
 - 따라서 탐색을 하게되면 멍청하게 값을 갱신하게된다
 - 비등방성(anisotropy)함수(방향에 따라 성질 즉 기울기가 달라지는 함수)에서 탐색 경로가 비효율적
@@ -111,11 +111,11 @@ class Momentum:
   - 이는 x축의 힘은 아주 작지만 방향은 변하지 않아서 한방향으로 일정하게 가속하기 떄문
   - 거꾸로 y축의 힘은 크지만 위아래로 번갈아 받아서 상층하여 y축 방향의 속도는 안정적이지 않다
 
-![momentum](../../assets/images/220321.png)
+![momentum](../../../assets/images/220321.png)
 
 ### AdaGrad
 
-![AdaGrad1](../../assets/images/220322.png)
+![AdaGrad1](../../../assets/images/220322.png)
 
 - 신경망 학습에서는 학습률 값(수식η) 이 중요하다
   - 너무 크면 발산하여 학습이 제대로 이뤄지지않고 너무작으면 학습시간이 너무 길어진다.
@@ -127,7 +127,7 @@ class Momentum:
 - AdaGrad는 과거의 기울기를 제곱하여 계속 더해간다. 따라서 학습을 진행할수록 갱신강도가 약해진다. 이는 무한히 학습하면 갱신량이 0이되어 갱신되지 않게된다. 이를 개선하기 위해 RMSProp이라는 방법이 있다.
   - RMSProp 는 과거의 모든 기울기를 균일하게 더해가는 것이 아니라 오래된 기울기는 서서히 잊고 새로운 기울기를 크게 반영한다. 이를 지수이동평균(Exponential Moving Average EMA)라 한다.
 
-![AdaGrad2](../../assets/images/220323.png)
+![AdaGrad2](../../../assets/images/220323.png)
 
 - AdaGrad에 의한 최적화 갱신 경로
 
@@ -139,7 +139,7 @@ class Momentum:
   - 일차 모멘텀용 계수 β<sub>1</sub>
   - 이차 모멘텀용 계쑤 β<sub>2</sub>
 
-![Adam](../../assets/images/220324.png)
+![Adam](../../../assets/images/220324.png)
 
 
 ### 어느 갱신 방법을 이용할 것인가?
@@ -196,7 +196,7 @@ for i, a in activations.items():
 plt.show()
 ```
 
-![gradient vanishing](../../assets/images/220325.png)
+![gradient vanishing](../../../assets/images/220325.png)
 
 - 5개 층이 존재하고 각 층 뉴런은 100개
 - 활성화 함수로 시그모이드를 사용하여 각층의 결과를 activations 변수에 저장한다
@@ -211,7 +211,7 @@ plt.show()
   w = np.random.randn(node_num, node_num) * 0.01
 ```
 
-![vygusfur](../../assets/images/220326.png)
+![vygusfur](../../../assets/images/220326.png)
 
 - 0.5 부근에 집중되었다
 - 0,1 로 치우치지않았으니 기울기 소실 문제는 없으나 활성화 값들이 치우쳤다는 큰 문제가 있다
@@ -224,7 +224,7 @@ plt.show()
   w = np.random.randn(node_num, node_num) / np.sqrt(node_num)
 ```
 
-![xavier](../../assets/images/220327.png)
+![xavier](../../../assets/images/220327.png)
 
 - xavier: 논문에서 권장하는 가중치 초깃값
   - 각 층의 활성화 값들을 광범위하게 분포시킬 목적으로 가중치의 적절한 분포로 앞 계층 노드가 n개라면 표준편차가 1/√n 인 분포를 사용한다는 결론
@@ -235,7 +235,7 @@ plt.show()
 
 ### 배치 정규화 알고리즘
 
-![batchnorm](../../assets/images/220328.png)
+![batchnorm](../../../assets/images/220328.png)
 
 - 2015년 제안된 방법
 - 배치 정규화 장점
